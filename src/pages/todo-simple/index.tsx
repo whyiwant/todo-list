@@ -11,7 +11,8 @@ export default function Home() {
   const addTask = () => {
     const newTask: ITask = {
       taskName: task,
-      deadline: parseInt(deadline),
+      deadline: deadline,
+      completed: false,
     };
 
     setTodo([...todo, newTask]);

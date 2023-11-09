@@ -1,10 +1,10 @@
-import { Button, Card, CardBody, Switch } from "@nextui-org/react";
+import { Button, Card, CardBody } from "@nextui-org/react";
 import { type ITask } from "~/interface/ITask";
 import { FcCheckmark } from "react-icons/fc";
 
 interface Props {
   task: ITask;
-  completeTask(taskName: string): void;
+  completeTask(taskName: string, id: string | undefined): void;
 }
 
 const TodoTask = ({ task, completeTask }: Props) => {
@@ -20,7 +20,7 @@ const TodoTask = ({ task, completeTask }: Props) => {
             <Button
               isIconOnly
               onClick={() => {
-                completeTask(task.taskName);
+                completeTask(task.taskName, task.id);
               }}
             >
               <FcCheckmark></FcCheckmark>
